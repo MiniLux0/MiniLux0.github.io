@@ -3,7 +3,7 @@
 :root {
   --padding-container: 100px 0;
   --color-title: #001a49;
-  background-color: #cac9c998;
+  background-color: #f1f1f100;
 }
 
 body {
@@ -59,7 +59,7 @@ body {
 
 .nav__link {
   margin-left: auto;
-  padding: 0;
+  padding: 0px;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
@@ -70,9 +70,42 @@ body {
   list-style: none;
 }
 
+/* EFECT NAV_LINKS */
+
 .nav__links {
   color: #fff;
   text-decoration: none;
+  position: fixed;
+  padding: 0 10px;
+}
+
+.nav__links::after {
+  content: "";
+  position: absolute;
+  background-color: #7444F7;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 1s;  
+}
+
+.nav__links:hover{
+  position: relative;
+  font-size: 20px;
+  text-shadow: 0 0 5px white,
+  0 0 15px white,
+  0 0 30px white;
+  transition: all 300ms ease-in-out;
+}
+
+.nav__links:hover:after{
+  width: 100%;
+}
+
+.neon{
+  margin: 0;
+  position: relative;
 }
 
 .nav__menu {
@@ -644,7 +677,13 @@ html{
 
   .nav__link--menu {
     position: fixed;
-    background-color: #000;
+    background-color: #000000;
+    background-image: radial-gradient(#454545 1.05px, transparent 1.05px),
+    radial-gradient(#959596 1.05px, #000000 1.05px);
+    background-size: 40px 40px;
+    background-position: 0 0,
+    21px 21px;
+    overflow: hidden;
     top: 0;
     left: 0;
     height: 100%;
